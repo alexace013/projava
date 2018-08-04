@@ -2,9 +2,13 @@ package user;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.extern.log4j.Log4j;
+
+import static java.lang.String.format;
 
 @Getter
 @Setter
+@Log4j
 public class User {
 
     public static final String DEFAULT_NAME = "Default Name";
@@ -14,7 +18,11 @@ public class User {
         name = DEFAULT_NAME;
     }
 
+    /**
+     * @param name User name
+     */
     public User(final String name) {
+        log.debug(format("user name: %s", name));
         this.name = name;
     }
 }
