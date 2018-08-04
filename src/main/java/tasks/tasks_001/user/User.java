@@ -1,4 +1,4 @@
-package user;
+package tasks.tasks_001.user;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -10,7 +10,6 @@ import static java.lang.String.format;
 @Setter
 @Log4j
 public class User {
-
     public static final String DEFAULT_NAME = "Default Name";
     private String name;
 
@@ -22,7 +21,7 @@ public class User {
      * @param name User name
      */
     public User(final String name) {
-        log.debug(format("user name: %s", name));
+        log.debug(format("tasks.tasks_001.user name: %s", name));
         this.name = name;
     }
 }
