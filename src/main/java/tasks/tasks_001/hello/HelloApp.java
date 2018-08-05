@@ -3,7 +3,7 @@ package tasks.tasks_001.hello;
 import static java.lang.System.out;
 
 import lombok.extern.log4j.Log4j;
-import tasks.tasks_001.user.User;
+import entities.user.User;
 
 import java.io.BufferedReader;
 import java.io.IOException;

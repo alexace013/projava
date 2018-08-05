@@ -1,4 +1,4 @@
-package tasks.tasks_001.user;
+package entities.user;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -21,7 +21,7 @@ public class User {
      * @param name User name
      */
     public User(final String name) {
-        log.debug(format("tasks.tasks_001.user name: %s", name));
+        log.debug(format("entities.user name: %s", name));
         this.name = name;
     }
 }

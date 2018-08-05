@@ -1,4 +1,4 @@
-package tasks.tasks_001.user;
+package entities.user;
 
 import lombok.extern.log4j.Log4j;
 import org.junit.Assert;
@@ -36,7 +36,7 @@ public class UserTest {
             testUser = (User) new Object();
         } catch (ClassCastException e) {
             log.error(e);
-            String errorMessage = "java.lang.Object cannot be cast to tasks.tasks_001.user.User";
+            String errorMessage = "java.lang.Object cannot be cast to entities.user.User";
             log.debug(errorMessage);
             Assert.assertEquals(errorMessage, e.getMessage());
         }
