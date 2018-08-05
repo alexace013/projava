@@ -43,6 +43,7 @@ public class UserTest {
     }
 
     public static User getTestUser() {
+        testUser = new User();
         return testUser;
     }
 }
