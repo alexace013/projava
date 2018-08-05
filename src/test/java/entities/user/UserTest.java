@@ -41,4 +41,8 @@ public class UserTest {
             Assert.assertEquals(errorMessage, e.getMessage());
         }
     }
+
+    public static User getTestUser() {
+        return testUser;
+    }
 }

@@ -8,7 +8,7 @@ public class HelloAction {
 
     /**
      * @param user User obj {@link User}
-     * @return text with salute a entities.user by name
+     * @return text with salute a user by name
      */
     public static String getSaluteUserText(final User user) {
         return format("Hello %s.", user.getName());
