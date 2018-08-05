@@ -80,7 +80,7 @@
                 <artifactId>maven-surefire-report-plugin</artifactId>
                 <version>2.21.0</version>
                 <configuration>
-                    <outputDirectory>**/target/surefire-reports/projava</outputDirectory>
+                    <outputDirectory>**/target/surefire-reports/</outputDirectory>
                 </configuration>
             </plugin>
             <plugin>
@@ -88,7 +88,7 @@
                 <artifactId>maven-site-plugin</artifactId>
                 <version>3.7.1</version>
                 <configuration>
-                    <outputDirectory>**/target/surefire-reports/projava</outputDirectory>
+                    <outputDirectory>**/target/surefire-reports/</outputDirectory>
                 </configuration>
             </plugin>
         </plugins>
