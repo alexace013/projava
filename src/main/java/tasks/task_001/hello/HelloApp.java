@@ -1,4 +1,4 @@
-package tasks.tasks_001.hello;
+package tasks.task_001.hello;
 
 import static java.lang.System.out;
 
@@ -27,6 +27,7 @@ public class HelloApp {
         } catch (IOException e) {
             log.error(e);
         }
+
         String saluteUserText = HelloAction.getSaluteUserText(user);
         log.debug(saluteUserText);
         out.println(saluteUserText);
