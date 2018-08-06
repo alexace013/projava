@@ -20,7 +20,7 @@ public class HelloApp {
     private static User user;
 
     public static void main(String[] args) {
-        out.print("input name: ");
+        out.print("Input your name: ");
         reader = new BufferedReader(new InputStreamReader(System.in));
         try {
             user = new User(reader.readLine());

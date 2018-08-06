@@ -21,7 +21,7 @@ public class User {
      * @param name User name
      */
     public User(final String name) {
-        log.debug(format("user name: %s", name));
+        log.debug(format("User name is '%s'", name));
         this.name = name;
     }
 }
