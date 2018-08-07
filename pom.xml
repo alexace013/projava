@@ -4,40 +4,48 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>javapro</groupId>
-    <artifactId>pro.java</artifactId>
+    <groupId>projava</groupId>
+    <artifactId>projava</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
+
+        <!-- PROJECT -> DEPENDENCIES -> DEPENDENCY -->
+        <junit:junit.version>4.12</junit:junit.version>
+        <org.projectlombok:lombok.version>1.16.20</org.projectlombok:lombok.version>
+        <log4j:log4j.version>1.2.17</log4j:log4j.version>
+
+        <!-- PROJECT -> BUILD -> PLUGINS -> PLUGIN -->
+        <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
+        <org.apache.maven.plugins:maven-surefire-plugin.version>2.21.0</org.apache.maven.plugins:maven-surefire-plugin.version>
+
+        <!-- PROJECT -> REPORTING -> PLUGINS -> PLUGIN -->
+        <org.apache.maven.plugins:maven-surefire-report-plugin.version>2.21.0</org.apache.maven.plugins:maven-surefire-report-plugin.version>
+        <org.apache.maven.plugins:maven-site-plugin.version>3.7.1</org.apache.maven.plugins:maven-site-plugin.version>
     </properties>
 
     <dependencies>
-
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <version>${junit:junit.version}</version>
             <scope>test</scope>
         </dependency>
-
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.16.20</version>
+            <version>${org.projectlombok:lombok.version}</version>
         </dependency>
-
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
+            <version>${log4j:log4j.version}</version>
         </dependency>
-
     </dependencies>
 
     <build>
-
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -46,31 +54,27 @@
         </resources>
 
         <plugins>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.7.0</version>
+                <version>${maven-compiler-plugin.version}</version>
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.21.0</version>
+                <version>${org.apache.maven.plugins:maven-surefire-plugin.version}</version>
                 <configuration>
                     <includes>
                         <include>**/*Test.java</include>
                     </includes>
                 </configuration>
             </plugin>
-
         </plugins>
-
     </build>
 
     <reporting>
@@ -78,7 +82,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-report-plugin</artifactId>
-                <version>2.21.0</version>
+                <version>${org.apache.maven.plugins:maven-surefire-report-plugin.version}</version>
                 <configuration>
                     <outputDirectory>**/target/surefire-reports</outputDirectory>
                 </configuration>
@@ -86,12 +90,11 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
-                <version>3.7.1</version>
+                <version>${org.apache.maven.plugins:maven-site-plugin.version}</version>
                 <configuration>
                     <outputDirectory>**/target/surefire-reports</outputDirectory>
                 </configuration>
             </plugin>
         </plugins>
     </reporting>
-
 </project>
