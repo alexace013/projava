@@ -14,3 +14,4 @@ What you need to do on your IDE (e. g. "IntelliJ IDEA") for run project?
 2. Go to "Plugins",
 3. In search field write "Lombok" and then click on "Search in repositories" will open new window and look for "Lombok Plugin". Click on it and then on right side click on "Install" button,
 4. Restart "IntelliJ IDEA" application.
+5. Enjoy!
