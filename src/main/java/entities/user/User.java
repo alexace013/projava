@@ -11,7 +11,7 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public class User {
     public static final String DEFAULT_NAME = "Default Name";
-    private static final short DEFAULT_VALUE = 0;
+    public static final short DEFAULT_VALUE = 0;
     private String name;
     private short age;
 
