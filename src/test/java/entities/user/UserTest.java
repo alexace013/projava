@@ -9,7 +9,6 @@ import org.junit.runners.MethodSorters;
 @Log4j
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class UserTest {
-
     private static User testUser = new User();
 
     @Test
