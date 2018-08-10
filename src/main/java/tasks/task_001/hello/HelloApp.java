@@ -22,11 +22,10 @@ public class HelloApp {
         out.print("Input your 'Name' press 'Enter' key and then input your 'Age':\n");
         reader = new BufferedReader(new InputStreamReader(System.in));
         try {
-            user = new User(reader.readLine(), reader.readLine());
+            user = new User(reader.readLine(), Short.parseShort(reader.readLine()));
         } catch (IOException e) {
             log.error(e);
         }
-
         String saluteUserText = HelloAction.getSaluteUserText(user);
         log.debug(saluteUserText);
         out.println(saluteUserText);

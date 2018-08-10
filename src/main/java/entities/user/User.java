@@ -1,33 +1,38 @@
 package entities.user;
 
+import static java.lang.String.format;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
-import static java.lang.String.format;
 
 @Getter
 @Setter
 @Log4j
 public class User {
     public static final String DEFAULT_NAME = "Default Name";
-    public static final String DEFAULT_AGE = "0";
+    private static final short DEFAULT_VALUE = 0;
     private String name;
-    private String age;
+    private short age;
 
     public User() {
         name = DEFAULT_NAME;
-        age = DEFAULT_AGE;
+        age = DEFAULT_VALUE;
     }
 
     /**
      * @param name User name
      * @param age User age
      */
-    public User(final String name, String age) {
+    public User(final String name, short age) {
         log.debug(format("User name is '%s'", name));
         this.name = name;
 
-        log.debug(format("User age is '%s'", age));
+        log.debug(format("User age is '%d'", age));
         this.age = age;
+    }
+
+    public static User getTestUser() {
+        return new User();
     }
 }
