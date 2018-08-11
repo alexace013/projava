@@ -1,16 +1,19 @@
 package entities.user;
 
+import static entities.user.User.UserData.DEFAULT_NAME;
+import static entities.user.User.UserData.DEFAULT_AGE;
+import static entities.user.User.UserData.TEST_USER_NAME;
+
 import lombok.extern.log4j.Log4j;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.FixMethodOrder;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.runners.MethodSorters;
 
 @Log4j
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class UserTest {
+
     private User testUser;
+
 
     @Before
     public void createUser() {
@@ -18,24 +21,21 @@ public class UserTest {
     }
 
     @Test
-    public void _01_testDefaultUserName() {
-        Assert.assertEquals(testUser.DEFAULT_NAME, testUser.getName());
+    public void _01_testDefaultUser() {
+        Assert.assertNotNull(testUser);
+        Assert.assertEquals(DEFAULT_NAME.getName(), testUser.getName());
+        Assert.assertEquals(DEFAULT_AGE.getAge(), testUser.getAge());
     }
 
     @Test
-    public void _02_testSetUserName() {
-        final String testName = "Test Name";
-        testUser.setName(testName);
-        Assert.assertEquals(testName, testUser.getName());
+    public void _02_testUserWithTestParam() {
+        testUser = new User(TEST_USER_NAME.getName());
+        Assert.assertEquals(TEST_USER_NAME.getName(), testUser.getName());
+        Assert.assertEquals(User.testUserAge, testUser.getAge());
     }
 
     @Test
-    public void _03_testNullUserName() {
-        testUser.setName(null);
-        Assert.assertNull(testUser.getName());
-    }
-
-    @Test
+    @Ignore
     public void _04_testObjectUser() {
         try {
             testUser = (User) new Object();
@@ -45,21 +45,5 @@ public class UserTest {
             log.debug(errorMessage);
             Assert.assertEquals(errorMessage, e.getMessage());
         }
-    }
-
-    @Test
-    public void _05_testDefaultUser() {
-        Assert.assertNotNull(testUser);
-        Assert.assertEquals(User.DEFAULT_NAME, testUser.getName());
-        Assert.assertEquals(User.DEFAULT_VALUE, testUser.getAge());
-    }
-
-    @Test
-    public void _06_testUSerWithParam() {
-        String testUserName = "TestUser";
-        short testUserAge = 10;
-        testUser = new User(testUserName, testUserAge);
-        Assert.assertEquals(testUserName, testUser.getName());
-        Assert.assertEquals(testUserAge, testUser.getAge());
     }
 }

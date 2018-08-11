@@ -1,6 +1,8 @@
 package tasks.task_001.hello;
 
 import static java.lang.System.out;
+
+import exceptions.IncorrectUserAgeException;
 import lombok.extern.log4j.Log4j;
 import entities.user.User;
 import java.io.BufferedReader;
@@ -23,7 +25,7 @@ public class HelloApp {
         reader = new BufferedReader(new InputStreamReader(System.in));
         try {
             user = new User(reader.readLine(), Short.parseShort(reader.readLine()));
-        } catch (IOException e) {
+        } catch (IOException | IncorrectUserAgeException e) {
             log.error(e);
         }
         String saluteUserText = HelloAction.getSaluteUserText(user);
