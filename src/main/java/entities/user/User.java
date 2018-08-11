@@ -12,11 +12,12 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public class User {
 
+    @Getter
     public enum UserData {
 
         DEFAULT_NAME("Default Name"),
-        DEFAULT_AGE(0),
-        TEST_USER_NAME("Test Name");
+        TEST_NAME("Test Name"),
+        DEFAULT_AGE(0);
 
         private String name;
         private short age;
@@ -27,14 +28,6 @@ public class User {
 
         UserData(final String name) {
             this.name = name;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public short getAge() {
-            return age;
         }
     }
 
@@ -75,7 +68,7 @@ public class User {
     }
 
     public static User getTestUser() {
-        return new User(UserData.TEST_USER_NAME.getName());
+        return new User(UserData.TEST_NAME.getName());
     }
 
     private static short getRandomAge() {

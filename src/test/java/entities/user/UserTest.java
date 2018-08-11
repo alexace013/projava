@@ -2,7 +2,7 @@ package entities.user;
 
 import static entities.user.User.UserData.DEFAULT_NAME;
 import static entities.user.User.UserData.DEFAULT_AGE;
-import static entities.user.User.UserData.TEST_USER_NAME;
+import static entities.user.User.UserData.TEST_NAME;
 
 import lombok.extern.log4j.Log4j;
 import org.junit.*;
@@ -29,8 +29,8 @@ public class UserTest {
 
     @Test
     public void _02_testUserWithTestParam() {
-        testUser = new User(TEST_USER_NAME.getName());
-        Assert.assertEquals(TEST_USER_NAME.getName(), testUser.getName());
+        testUser = User.getTestUser();
+        Assert.assertEquals(TEST_NAME.getName(), testUser.getName());
         Assert.assertEquals(User.testUserAge, testUser.getAge());
     }
 
