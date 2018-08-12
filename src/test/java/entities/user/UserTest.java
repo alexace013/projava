@@ -42,7 +42,7 @@ public class UserTest {
 
     @Test
     public void _04_testUserWithNegativeAgeData() {
-        int age = (-1) * (faker.random().nextInt(0, 150));
+        int age = (-1) * (faker.random().nextInt(User.getRandomMinValue(), User.getRandomMaxValue()));
         try {
             user = new User(faker.name().firstName(), age);
         } catch (IncorrectUserAgeException e) {
@@ -59,7 +59,8 @@ public class UserTest {
     @Test
     public void _06_testUserNameNullData() throws IncorrectUserAgeException {
         try {
-            user = new User(null, faker.random().nextInt(0, 150));
+            user = new User(null, faker.random()
+                    .nextInt(User.getRandomMinValue(), User.getRandomMaxValue()));
             Assert.assertNull(user.getName());
             checkBoundaryValues(user);
         } catch (NullPointerException e) {
@@ -68,6 +69,8 @@ public class UserTest {
     }
 
     private void checkBoundaryValues(final User user) {
-        Assert.assertTrue(user.getAge() >= 0 && user.getAge() <= 150);
+        Assert.assertTrue(user.getAge()
+                >= User.getRandomMinValue() && user.getAge()
+                <= User.getRandomMaxValue());
     }
 }

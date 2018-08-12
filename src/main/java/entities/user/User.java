@@ -36,6 +36,16 @@ public class User {
     private int age;
     public static int testUserAge;
     private static final String USER_DEBUG_MESSAGE = "{\n\tuser name: %s\n\tuser age: %d\n}";
+    private static final int RANDOM_MIN_VALUE = 0;
+    private static final int RANDOM_MAX_VALUE = 150;
+
+    public static int getRandomMinValue() {
+        return RANDOM_MIN_VALUE;
+    }
+
+    public static int getRandomMaxValue() {
+        return RANDOM_MAX_VALUE;
+    }
 
     public User() {
         name = UserData.DEFAULT_NAME.getName();
@@ -48,7 +58,7 @@ public class User {
      */
     public User(final String name) {
         this.name = name;
-        age = new Faker().random().nextInt(0, 150);
+        age = new Faker().random().nextInt(RANDOM_MIN_VALUE, RANDOM_MAX_VALUE);
         testUserAge = age;
         log.debug(format(USER_DEBUG_MESSAGE, name, age));
     }
@@ -79,6 +89,7 @@ public class User {
 
     public static User getFakerUser() throws IncorrectUserAgeException {
         Faker faker = new Faker();
-        return new User(faker.name().firstName(), faker.random().nextInt(0, 150));
+        return new User(faker.name().firstName(),
+                faker.random().nextInt(RANDOM_MIN_VALUE, RANDOM_MAX_VALUE));
     }
 }
