@@ -2,6 +2,7 @@ package entities.user;
 
 import static java.lang.String.format;
 
+import com.github.javafaker.Faker;
 import exceptions.IncorrectUserAgeException;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,10 +21,10 @@ public class User {
         DEFAULT_AGE(0);
 
         private String name;
-        private short age;
+        private int age;
 
         UserData(final int age) {
-            this.age = (short) age;
+            this.age = age;
         }
 
         UserData(final String name) {
@@ -32,12 +33,14 @@ public class User {
     }
 
     private String name;
-    private short age;
-    public static short testUserAge;
+    private int age;
+    public static int testUserAge;
+    private static final String USER_DEBUG_MESSAGE = "{\n\tuser name: %s\n\tuser age: %d\n}";
 
     public User() {
         name = UserData.DEFAULT_NAME.getName();
         age = UserData.DEFAULT_AGE.getAge();
+        log.debug(format(USER_DEBUG_MESSAGE, name, age));
     }
 
     /**
@@ -45,22 +48,25 @@ public class User {
      */
     public User(final String name) {
         this.name = name;
-        age = getRandomAge();
+        age = new Faker().random().nextInt(0, 150);
+        testUserAge = age;
+        log.debug(format(USER_DEBUG_MESSAGE, name, age));
     }
 
     /**
      * @param name User name
      * @param age  User age
      */
-    public User(final String name, final short age) throws IncorrectUserAgeException {
+    public User(final String name, final int age) throws IncorrectUserAgeException, NullPointerException {
         if (age < 0) {
-            throw new IncorrectUserAgeException("User age can't be < 0");
+            throw new IncorrectUserAgeException("User age can't be negative");
         }
-        log.debug(format("User name is '%s'", name));
+        if (name == null) {
+            throw new NullPointerException("User name is NULL");
+        }
         this.name = name;
-
-        log.debug(format("User age is '%d'", age));
         this.age = age;
+        log.debug(format(USER_DEBUG_MESSAGE, name, age));
     }
 
     public static User getTestDefaultUser() {
@@ -71,8 +77,8 @@ public class User {
         return new User(UserData.TEST_NAME.getName());
     }
 
-    private static short getRandomAge() {
-        testUserAge = Short.parseShort(String.valueOf((int) (Math.random() * 50)));
-        return testUserAge;
+    public static User getFakerUser() throws IncorrectUserAgeException {
+        Faker faker = new Faker();
+        return new User(faker.name().firstName(), faker.random().nextInt(0, 150));
     }
 }

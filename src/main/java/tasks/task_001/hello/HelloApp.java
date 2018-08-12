@@ -24,7 +24,7 @@ public class HelloApp {
         out.print("Input your 'Name' press 'Enter' key and then input your 'Age':\n");
         reader = new BufferedReader(new InputStreamReader(System.in));
         try {
-            user = new User(reader.readLine(), Short.parseShort(reader.readLine()));
+            user = new User(reader.readLine(), Integer.parseInt(reader.readLine()));
         } catch (IOException | IncorrectUserAgeException e) {
             log.error(e);
         }
