@@ -2,6 +2,7 @@ package tasks.task_002;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+
 import tasks.task_002.math.MathActions;
 
 public class TaskApp {
@@ -10,6 +11,6 @@ public class TaskApp {
 
 //        System.out.println(MathActions.getDifferenceBetweenDoubleFigureInfo(reader));
 //        System.out.println(MathActions.getTheLargestOfTheThreeNumbers(reader));
-        System.out.println(MathActions.getSmallestAndBiggestOfInputtedNumbers(reader));
+        MathActions.getSmallestAndBiggestOfInputtedNumbers(reader);
     }
 }
