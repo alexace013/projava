@@ -83,7 +83,7 @@ public class MathActions {
         return String.format(messageText, value1, value2, value3, max);
     }
 
-    public static void getSmallestAndBiggestOfInputtedNumbers(final BufferedReader reader) {
+    public static String getSmallestAndBiggestOfInputtedNumbers(final BufferedReader reader) {
         int a = 0;
         int b = 0;
         int c = 0;
