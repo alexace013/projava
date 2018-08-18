@@ -2,6 +2,7 @@ package tasks.task_002.math;
 
 import static java.lang.System.out;
 
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import lombok.extern.log4j.Log4j;
 
 import java.io.BufferedReader;
@@ -132,6 +133,9 @@ public class MathActions {
         } catch (IOException ioe) {
             System.out.println("EXCEPTION - " + ioe);
             ioe.printStackTrace();
+        } catch (NumberFormatException nfe) {
+            System.out.println("EXCEPTION - INCORRECT VALUE, LETTERS ARE NOT ALLOWED\n" + nfe + "\n");
+            nfe.printStackTrace();
         }
 
         int res1 = number / 1000000; // 1
@@ -149,7 +153,44 @@ public class MathActions {
         res7 = res7 % 10; // 7
 
         int arithmeticMean = (res1 + res2 + res3 + res4 + res5 + res6 + res7) / 7;
-        String result = "Среднее арифметическое: " + arithmeticMean;
+        String result = "Среднее арифметическое: " + arithmeticMean + "\nTHE END\n";
+        return result;
+    }
+
+    public static String getQuarterOfRectangularCoordinateSystem(final BufferedReader reader) {
+        byte x = 0;
+        byte y = 0;
+        try {
+            log.debug("Введите координаты (от -10 до 10 (включительно)) для оси 'x': ");
+            x = Byte.parseByte(reader.readLine());
+
+            log.debug("Введите координаты (от -10 до 10 (включительно)) для оси 'y': ");
+            y = Byte.parseByte(reader.readLine());
+        } catch (IOException ioe) {
+            System.out.println("EXCEPTION - " + ioe);
+            ioe.printStackTrace();
+        } catch (NumberFormatException nfe) {
+            System.out.println("EXCEPTION - INCORRECT VALUE, LETTERS ARE NOT ALLOWED\n" + nfe + "\n");
+            nfe.printStackTrace();
+        }
+
+        log.debug("- - - - -");
+        if ((x > 0 & x < 11) & (y > 0 & y < 11)) {
+            System.out.println("Координаты расположены в первой четверти (в правом верхнем углу)");
+        } else if ((x < 0 & x > -11) & (y > 0 & y < 11)) {
+            System.out.println("Координаты расположены во второй четверти (в левом верхнем углу)");
+        } else if ((x < 0 & x > -11) & (y < 0 & y > -11)) {
+            System.out.println("Координаты расположены в третей четверти (в левом нижнем углу)");
+        } else if ((x > 0 & x < 11) & (y < 0 & y > -11)) {
+            System.out.println("Координаты расположены в четвертой четверти (в правом нижнем углу)");
+        } else if (x == 0 & y == 0) {
+            System.out.println("Координатов нет!");
+        } else {
+            System.out.println("Быдыыыщь!");
+        }
+
+        log.debug("- - - - -");
+        String result = "Ваши координаты:\nx = " + x + "\n" + "y = " + y + "\nTHE END\n";
         return result;
     }
 }
