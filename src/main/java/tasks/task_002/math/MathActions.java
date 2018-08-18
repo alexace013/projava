@@ -2,7 +2,6 @@ package tasks.task_002.math;
 
 import static java.lang.System.out;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import lombok.extern.log4j.Log4j;
 
 import java.io.BufferedReader;
@@ -83,7 +82,7 @@ public class MathActions {
         return String.format(messageText, value1, value2, value3, max);
     }
 
-    public static String getSmallestAndBiggestOfInputtedNumbers(final BufferedReader reader) {
+    public static void getSmallestAndBiggestOfInputtedNumbers(final BufferedReader reader) {
         int a = 0;
         int b = 0;
         int c = 0;
