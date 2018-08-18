@@ -33,7 +33,7 @@ public class MathActions {
         } else {
             int firstNumber = value / rangeFrom;
             int secondNumber = value % rangeFrom;
-            String differenceMessage = "The difference between the digits of this number is: %d\nTHE END\n";
+            String differenceMessage = "The difference between the digits of this number is: %d\n- - - - -THE END\n";
             String differenceMessageLog = "The difference between the digits of this number is: %d";
             int result;
             if (firstNumber >= secondNumber) {
@@ -69,7 +69,7 @@ public class MathActions {
             System.out.println("EXCEPTION - INCORRECT VALUE, LETTERS ARE NOT ALLOWED\n" + nfe);
         }
 
-        String messageText = "The largest of the three {%d, %d, %d} is %d";
+        String messageText = "The largest of the three {%d, %d, %d} is %d\n- - - - -THE END\n";
         int max;
         if (value1 > value2) {
             max = value1;
@@ -121,5 +121,6 @@ public class MathActions {
         if (c < a & c < b) {
             System.out.print(c + " ");
         }
+        System.out.println("\n- - - - -THE END");
     }
 }
