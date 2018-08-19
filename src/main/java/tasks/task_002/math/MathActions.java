@@ -104,7 +104,6 @@ public class MathActions {
         int a = one;
         int b = two;
         int c = three;
-        String result = "";
         if (reader != null) {
             try {
                 log.debug("Input first number: ");
@@ -126,28 +125,26 @@ public class MathActions {
             c = three;
         }
 
-        // first number
-        if (a > b & a > c) {
-            System.out.print(result = a + " ");
-        }
-        if (a < b & a < c) {
-            System.out.print(result = a + " ");
-        }
-
-        // second number
-        if (b > a & b > c) {
-            System.out.print(result = b + " ");
-        }
-        if (b < a & b < c) {
-            System.out.print(result = b + " ");
-        }
-
-        // third number
-        if (c > a & c > b) {
-            System.out.print(result = c + " ");
-        }
-        if (c < a & c < b) {
-            System.out.print(result = c + " ");
+        if (a < b & c > b & a < c) {
+            System.out.println(a + " " + c); // 123
+        } else if (a < b & b == c & a < c) {
+            System.out.println(a + " " + c); // 122
+        } else if (a == b & b < c & a < c) {
+            System.out.println(a + " " + c); // 112
+        } else if (a > b & b > c & a > c) {
+            System.out.println(c + " " + a); // 321
+        } else if (a > b & b < c & a == c) {
+            System.out.println(b + " " + a); // 212
+        } else if (a == b & b > c & a > c) {
+            System.out.println(c + " " + a); // 221
+        } else if (a < b & b > c & a == c) {
+            System.out.println(a + " " + b); // 121
+        } else if (a > b & b < c & a < c) {
+            System.out.println(b + " " + c); // 213
+        } else if (a < b & b > c & a > c) {
+            System.out.println(c + " " + b); // 231
+        } else if (a == b & a == c) {
+            System.out.println(a); // 111
         }
         return "\n- - - - -THE END\n";
     }
