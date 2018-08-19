@@ -14,7 +14,6 @@ import org.junit.runners.MethodSorters;
 @Log4j
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class UserTest {
-
     private User user;
     private Faker faker = new Faker();
 

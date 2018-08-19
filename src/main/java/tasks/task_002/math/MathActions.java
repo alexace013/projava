@@ -12,6 +12,13 @@ import java.io.IOException;
 public class MathActions {
     private static final String EXCEPTION_MESSAGE = "VALUE {%s} IS NOT A NUMBER!!!";
 
+    /*
+     * Дано 2х значное число, вычислить разность между цифрами этого числа
+     * Пример:
+     * 50 = 5 - 0 = 5
+     * 49 = 9 - 4 = 5
+     * 19 =
+     * */
     public static String getDifferenceBetweenDoubleFigureInfo(final BufferedReader reader) {
         byte rangeFrom = 10;
         byte rangeTo = 99;
@@ -50,6 +57,9 @@ public class MathActions {
         return "nothing else";
     }
 
+    /*
+     * Пользователь вводит 3 числа, вывести на экран большее из них
+     * */
     public static String getTheLargestOfTheThreeNumbers(final BufferedReader reader) {
         int value1 = 0;
         int value2 = 0;
@@ -83,6 +93,15 @@ public class MathActions {
         return String.format(messageText, value1, value2, value3, max);
     }
 
+    /*
+     * Больший меньший
+     * Пользователь вводит три числа, вывести на экран большее и меньшее из них в строчку
+     * Пример:
+     * 5
+     * 2
+     * 7
+     * 7 2
+     * */
     public static String getSmallestAndBiggestOfInputtedNumbers(final BufferedReader reader) {
         int a = 0;
         int b = 0;
@@ -129,6 +148,13 @@ public class MathActions {
         return "\n- - - - -THE END\n";
     }
 
+    /*
+     * Цифры 7
+     * Пользователь вводит семизначное число, вывести в консоль среднее арифметическое его цифр
+     * Пример:
+     * 1600061
+     * 2
+     * */
     public static String getDirectAverageOfDigits(final BufferedReader reader) {
         int number = 0;
         try {
@@ -157,10 +183,20 @@ public class MathActions {
         res7 = res7 % 10; // 7
 
         int arithmeticMean = (res1 + res2 + res3 + res4 + res5 + res6 + res7) / 7;
-        String result = "Среднее арифметическое: " + arithmeticMean + "\nTHE END\n";
+        String result = "Среднее арифметическое: " + arithmeticMean + "\n- - - - -THE END\n";
         return result;
     }
 
+    /*
+     * Четверть
+     * Пользователь вводит координаты точки,
+     * определить в какой она находится четверти (декартова система координат),
+     * углы наз. - координатными углами, четвертями или квадрантами плоскости.
+     * Если точка находится между четвертями, то выводить 0
+     * Пример:
+     * -2 2
+     * 2
+     * */
     public static String getQuarterOfRectangularCoordinateSystem(final BufferedReader reader) {
         byte x = 0;
         byte y = 0;
@@ -194,7 +230,7 @@ public class MathActions {
         }
 
         log.debug("- - - - -");
-        String result = "Ваши координаты:\nx = " + x + "\n" + "y = " + y + "\nTHE END\n";
+        String result = "Ваши координаты:\nx = " + x + "\n" + "y = " + y + "\n- - - - -THE END\n";
         return result;
     }
 }

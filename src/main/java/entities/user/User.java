@@ -12,10 +12,15 @@ import lombok.extern.log4j.Log4j;
 @Setter
 @Log4j
 public class User {
+    private String name;
+    private int age;
+    public static int testUserAge;
+    private static final String USER_DEBUG_MESSAGE = "{\n\tuser name: %s\n\tuser age: %d\n}";
+    private static final int RANDOM_MIN_VALUE = 0;
+    private static final int RANDOM_MAX_VALUE = 150;
 
     @Getter
     public enum UserData {
-
         DEFAULT_NAME("Default Name"),
         TEST_NAME("Test Name"),
         DEFAULT_AGE(0);
@@ -31,13 +36,6 @@ public class User {
             this.name = name;
         }
     }
-
-    private String name;
-    private int age;
-    public static int testUserAge;
-    private static final String USER_DEBUG_MESSAGE = "{\n\tuser name: %s\n\tuser age: %d\n}";
-    private static final int RANDOM_MIN_VALUE = 0;
-    private static final int RANDOM_MAX_VALUE = 150;
 
     public static int getRandomMinValue() {
         return RANDOM_MIN_VALUE;
