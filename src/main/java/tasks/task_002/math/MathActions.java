@@ -2,9 +2,7 @@ package tasks.task_002.math;
 
 import static java.lang.System.out;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import lombok.extern.log4j.Log4j;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 
@@ -12,14 +10,14 @@ import java.io.IOException;
 public class MathActions {
     private static final String EXCEPTION_MESSAGE = "VALUE {%s} IS NOT A NUMBER!!!";
 
-    /*
-     * Дано 2х значное число, вычислить разность между цифрами этого числа
-     * Пример:
-     * 50 = 5 - 0 = 5
-     * 49 = 9 - 4 = 5
-     * 19 =
-     * */
-    public static String getDifferenceBetweenDoubleFigureInfo(final BufferedReader reader) {
+    public static String task1(final BufferedReader reader) {
+        /*
+         * Дано 2х значное число, вычислить разность между цифрами этого числа
+         * Пример:
+         * 50 = 5 - 0 = 5
+         * 49 = 9 - 4 = 5
+         * 19 =
+         * */
         byte rangeFrom = 10;
         byte rangeTo = 99;
         String strValue = "";
@@ -57,10 +55,10 @@ public class MathActions {
         return "nothing else";
     }
 
-    /*
-     * Пользователь вводит 3 числа, вывести на экран большее из них
-     * */
-    public static String getTheLargestOfTheThreeNumbers(final BufferedReader reader) {
+    public static String task2(final BufferedReader reader) {
+        /*
+         * Пользователь вводит 3 числа, вывести на экран большее из них
+         * */
         int value1 = 0;
         int value2 = 0;
         int value3 = 0;
@@ -93,33 +91,39 @@ public class MathActions {
         return String.format(messageText, value1, value2, value3, max);
     }
 
-    /*
-     * Больший меньший
-     * Пользователь вводит три числа, вывести на экран большее и меньшее из них в строчку
-     * Пример:
-     * 5
-     * 2
-     * 7
-     * 7 2
-     * */
-    public static String getSmallestAndBiggestOfInputtedNumbers(final BufferedReader reader) {
-        int a = 0;
-        int b = 0;
-        int c = 0;
+    public static String task3(final BufferedReader reader, int one, int two, int three) {
+        /*
+         * Больший меньший
+         * Пользователь вводит три числа, вывести на экран большее и меньшее из них в строчку
+         * Пример:
+         * 5
+         * 2
+         * 7
+         * 7 2
+         * */
+        int a = one;
+        int b = two;
+        int c = three;
         String result = "";
-        try {
-            log.debug("Input first number: ");
-            a = Integer.parseInt(reader.readLine());
-            log.debug("Input second number: ");
-            b = Integer.parseInt(reader.readLine());
-            log.debug("Input third number: ");
-            c = Integer.parseInt(reader.readLine());
-        } catch (IOException ioe) {
-            System.out.println("EXCEPTION\n" + ioe);
-            ioe.printStackTrace();
-        } catch (NumberFormatException nfe) {
-            System.out.println("EXCEPTION - INCORRECT VALUE, LETTERS ARE NOT ALLOWED\n" + nfe + "\n");
-            nfe.printStackTrace();
+        if (reader != null) {
+            try {
+                log.debug("Input first number: ");
+                a = Integer.parseInt(reader.readLine());
+                log.debug("Input second number: ");
+                b = Integer.parseInt(reader.readLine());
+                log.debug("Input third number: ");
+                c = Integer.parseInt(reader.readLine());
+            } catch (IOException ioe) {
+                System.out.println("EXCEPTION\n" + ioe);
+                ioe.printStackTrace();
+            } catch (NumberFormatException nfe) {
+                System.out.println("EXCEPTION - INCORRECT VALUE, LETTERS ARE NOT ALLOWED\n" + nfe + "\n");
+                nfe.printStackTrace();
+            }
+        } else {
+            a = one;
+            b = two;
+            c = three;
         }
 
         // first number
@@ -148,14 +152,14 @@ public class MathActions {
         return "\n- - - - -THE END\n";
     }
 
-    /*
-     * Цифры 7
-     * Пользователь вводит семизначное число, вывести в консоль среднее арифметическое его цифр
-     * Пример:
-     * 1600061
-     * 2
-     * */
-    public static String getDirectAverageOfDigits(final BufferedReader reader) {
+    public static String task4(final BufferedReader reader) {
+        /*
+         * Цифры 7
+         * Пользователь вводит семизначное число, вывести в консоль среднее арифметическое его цифр
+         * Пример:
+         * 1600061
+         * 2
+         * */
         int number = 0;
         try {
             log.debug("Введите 7-ми значное число: ");
@@ -187,17 +191,17 @@ public class MathActions {
         return result;
     }
 
-    /*
-     * Четверть
-     * Пользователь вводит координаты точки,
-     * определить в какой она находится четверти (декартова система координат),
-     * углы наз. - координатными углами, четвертями или квадрантами плоскости.
-     * Если точка находится между четвертями, то выводить 0
-     * Пример:
-     * -2 2
-     * 2
-     * */
-    public static String getQuarterOfRectangularCoordinateSystem(final BufferedReader reader) {
+    public static String task5(final BufferedReader reader) {
+        /*
+         * Четверть
+         * Пользователь вводит координаты точки,
+         * определить в какой она находится четверти (декартова система координат),
+         * углы наз. - координатными углами, четвертями или квадрантами плоскости.
+         * Если точка находится между четвертями, то выводить 0
+         * Пример:
+         * -2 2
+         * 2
+         * */
         byte x = 0;
         byte y = 0;
         try {

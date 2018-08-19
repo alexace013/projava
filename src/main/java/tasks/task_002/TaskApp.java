@@ -2,17 +2,16 @@ package tasks.task_002;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-
 import tasks.task_002.math.MathActions;
 
 public class TaskApp {
     public static void main(String[] args) {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        System.out.println(MathActions.getDifferenceBetweenDoubleFigureInfo(reader));
-        System.out.println(MathActions.getTheLargestOfTheThreeNumbers(reader));
-        System.out.println(MathActions.getSmallestAndBiggestOfInputtedNumbers(reader));
-        System.out.println(MathActions.getDirectAverageOfDigits(reader));
-        System.out.println(MathActions.getQuarterOfRectangularCoordinateSystem(reader));
+//        System.out.println(MathActions.task1(reader));
+//        System.out.println(MathActions.task2(reader));
+        System.out.println(MathActions.task3(reader, 0, 0, 0));
+//        System.out.println(MathActions.task4(reader));
+//        System.out.println(MathActions.task5(reader));
     }
 }
