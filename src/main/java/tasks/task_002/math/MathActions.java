@@ -83,10 +83,11 @@ public class MathActions {
         return String.format(messageText, value1, value2, value3, max);
     }
 
-    public static void getSmallestAndBiggestOfInputtedNumbers(final BufferedReader reader) {
+    public static String getSmallestAndBiggestOfInputtedNumbers(final BufferedReader reader) {
         int a = 0;
         int b = 0;
         int c = 0;
+        String result = "";
         try {
             log.debug("Input first number: ");
             a = Integer.parseInt(reader.readLine());
@@ -97,32 +98,35 @@ public class MathActions {
         } catch (IOException ioe) {
             System.out.println("EXCEPTION\n" + ioe);
             ioe.printStackTrace();
+        } catch (NumberFormatException nfe) {
+            System.out.println("EXCEPTION - INCORRECT VALUE, LETTERS ARE NOT ALLOWED\n" + nfe + "\n");
+            nfe.printStackTrace();
         }
 
         // first number
         if (a > b & a > c) {
-            System.out.print(a + " ");
+            System.out.print(result = a + " ");
         }
         if (a < b & a < c) {
-            System.out.print(a + " ");
+            System.out.print(result = a + " ");
         }
 
         // second number
         if (b > a & b > c) {
-            System.out.print(b + " ");
+            System.out.print(result = b + " ");
         }
         if (b < a & b < c) {
-            System.out.print(b + " ");
+            System.out.print(result = b + " ");
         }
 
         // third number
         if (c > a & c > b) {
-            System.out.print(c + " ");
+            System.out.print(result = c + " ");
         }
         if (c < a & c < b) {
-            System.out.print(c + " ");
+            System.out.print(result = c + " ");
         }
-        System.out.println("\n- - - - -THE END");
+        return "\n- - - - -THE END\n";
     }
 
     public static String getDirectAverageOfDigits(final BufferedReader reader) {

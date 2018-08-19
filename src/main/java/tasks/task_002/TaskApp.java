@@ -9,11 +9,13 @@ public class TaskApp {
     public static void main(String[] args) {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        System.out.println(MathActions.getDifferenceBetweenDoubleFigureInfo(reader));
-        System.out.println(MathActions.getTheLargestOfTheThreeNumbers(reader));
-        MathActions.getSmallestAndBiggestOfInputtedNumbers(reader);
-        System.out.println(MathActions.getDirectAverageOfDigits(reader));
-        System.out.println(MathActions.getQuarterOfRectangularCoordinateSystem(reader));
+//        System.out.println(MathActions.getDifferenceBetweenDoubleFigureInfo(reader));
+//        System.out.println(MathActions.getTheLargestOfTheThreeNumbers(reader));
+//        MathActions.getSmallestAndBiggestOfInputtedNumbers(reader);
+        System.out.println(MathActions.getSmallestAndBiggestOfInputtedNumbers(reader));
+
+//        System.out.println(MathActions.getDirectAverageOfDigits(reader));
+//        System.out.println(MathActions.getQuarterOfRectangularCoordinateSystem(reader));
 
     }
 }
