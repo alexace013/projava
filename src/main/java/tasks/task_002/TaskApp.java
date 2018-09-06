@@ -13,5 +13,6 @@ public class TaskApp {
         System.out.println(MathActions.task3(reader, 0, 0, 0));
         System.out.println(MathActions.task4(reader));
         System.out.println(MathActions.task5(reader));
+//        System.out.println(MathActions.task6(reader));
     }
 }
