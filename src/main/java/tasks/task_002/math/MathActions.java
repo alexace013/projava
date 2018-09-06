@@ -55,31 +55,38 @@ public class MathActions {
         return "nothing else";
     }
 
-    public static String task2(final BufferedReader reader) {
+    public static String task2(final BufferedReader reader, int value01, int value02, int value03) {
         /*
          * Пользователь вводит 3 числа, вывести на экран большее из них
          * */
-        int value1 = 0;
-        int value2 = 0;
-        int value3 = 0;
-        try {
-            log.debug("Enter 1-st number: ");
-            value1 = Integer.parseInt(reader.readLine());
-            log.debug(String.format("value = {%s}\n", value1));
-            log.debug("Enter 2-nd number: ");
-            value2 = Integer.parseInt(reader.readLine());
-            log.debug(String.format("value = {%s}\n", value2));
-            log.debug("Enter 3-td number: ");
-            value3 = Integer.parseInt(reader.readLine());
-            log.debug(String.format("value = {%s}\n", value3));
-        } catch (IOException e) {
-            log.error(String.format(EXCEPTION_MESSAGE, ""));
-        } catch (NumberFormatException nfe) {
-            System.out.println("EXCEPTION - INCORRECT VALUE, LETTERS ARE NOT ALLOWED\n" + nfe);
+        int value1 = value01;
+        int value2 = value02;
+        int value3 = value03;
+        if (reader != null) {
+            try {
+                log.debug("Enter 1-st number: ");
+                value1 = Integer.parseInt(reader.readLine());
+                log.debug(String.format("value = {%s}", value1));
+                log.debug("Enter 2-nd number: ");
+                value2 = Integer.parseInt(reader.readLine());
+                log.debug(String.format("value = {%s}", value2));
+                log.debug("Enter 3-td number: ");
+                value3 = Integer.parseInt(reader.readLine());
+                log.debug(String.format("value = {%s}", value3));
+            } catch (IOException e) {
+                log.error(String.format(EXCEPTION_MESSAGE, ""));
+            } catch (NumberFormatException nfe) {
+                System.out.println("EXCEPTION - INCORRECT VALUE, LETTERS ARE NOT ALLOWED\n" + nfe);
+            }
+        } else {
+            value1 = value01;
+            value2 = value02;
+            value3 = value03;
         }
 
-        String messageText = "The largest of the three {%d, %d, %d} is %d\n- - - - -THE END\n";
+//        String messageText = "The largest of the three {%d, %d, %d} is %d\n- - - - -THE END\n";
         int max;
+        String result = "";
         if (value1 > value2) {
             max = value1;
         } else {
@@ -88,7 +95,8 @@ public class MathActions {
         if (value3 > max) {
             max = value3;
         }
-        return String.format(messageText, value1, value2, value3, max);
+//        return String.format(messageText, value1, value2, value3, max);
+        return String.format(String.valueOf(max));
     }
 
     public static String task3(final BufferedReader reader, int one, int two, int three) {
