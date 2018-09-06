@@ -10,30 +10,37 @@ import java.io.IOException;
 public class MathActions {
     private static final String EXCEPTION_MESSAGE = "VALUE {%s} IS NOT A NUMBER!!!";
 
-    public static String task1(final BufferedReader reader) {
+    public static String task1(final BufferedReader reader, int diff) {
         /*
          * Дано 2х значное число, вычислить разность между цифрами этого числа
          * Пример:
          * 50 = 5 - 0 = 5
          * 49 = 9 - 4 = 5
-         * 19 =
+         * 19 = 9 - 1 = 8
          * */
         byte rangeFrom = 10;
         byte rangeTo = 99;
-        String strValue = "";
+//        String strValue = "";
+        int strValue = 0;
         String message = String.format("Please, input value from %d to %d: ", rangeFrom, rangeTo);
         log.debug(message);
         out.print(message);
-        try {
-            strValue = reader.readLine();
-        } catch (IOException e) {
-            log.error(String.format(EXCEPTION_MESSAGE, strValue));
-            e.printStackTrace();
-        } catch (NumberFormatException nfe) {
-            System.out.println("Only double figure, please!" + nfe);
+        if (reader != null) {
+            try {
+//                strValue = reader.readLine();
+                strValue = Integer.parseInt(reader.readLine());
+            } catch (IOException e) {
+                log.error(String.format(EXCEPTION_MESSAGE, strValue));
+                e.printStackTrace();
+            } catch (NumberFormatException nfe) {
+                System.out.println("Only double figure, please!" + nfe);
+            }
+        } else {
+            strValue = diff;
         }
 
-        final int value = Integer.parseInt(strValue);
+//        final int value = Integer.parseInt(strValue);
+        final int value = strValue;
         if (value < rangeFrom || value > rangeTo) {
             log.warn(String.format("Value should be include range from %d to %d, but was entered {%s}", rangeFrom, rangeTo, strValue));
         } else {
@@ -45,11 +52,13 @@ public class MathActions {
             if (firstNumber >= secondNumber) {
                 result = firstNumber - secondNumber;
                 log.debug(String.format(differenceMessageLog, result));
-                return String.format(differenceMessage, result);
+//                return String.format(differenceMessage, result);
+                return String.format(String.valueOf(result));
             } else {
                 result = secondNumber - firstNumber;
                 log.debug(String.format(differenceMessageLog, result));
-                return String.format(differenceMessage, result);
+//                return String.format(differenceMessage, result);
+                return String.format(String.valueOf(result));
             }
         }
         return "nothing else";

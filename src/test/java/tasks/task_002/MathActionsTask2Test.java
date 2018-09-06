@@ -13,7 +13,7 @@ public class MathActionsTask2Test {
     private int c = 3;
 
     /*
-    * Positive tests
+    * Positive cases
     * */
     @Test
     public void testMethodA() {
