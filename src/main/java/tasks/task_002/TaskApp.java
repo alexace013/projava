@@ -9,9 +9,9 @@ public class TaskApp {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         System.out.println(MathActions.task1(reader, 0));
-//        System.out.println(MathActions.task2(reader, 0, 0, 0));
-//        System.out.println(MathActions.task3(reader, 0, 0, 0));
-//        System.out.println(MathActions.task4(reader));
-//        System.out.println(MathActions.task5(reader));
+        System.out.println(MathActions.task2(reader, 0, 0, 0));
+        System.out.println(MathActions.task3(reader, 0, 0, 0));
+        System.out.println(MathActions.task4(reader));
+        System.out.println(MathActions.task5(reader));
     }
 }
