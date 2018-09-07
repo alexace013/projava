@@ -9,14 +9,14 @@ import java.io.IOException;
 public class MathActions {
     private static final String EXCEPTION_MESSAGE = "VALUE {%s} IS NOT A NUMBER!!!";
 
+    /*
+     * Дано 2х значное число, вычислить разность между цифрами этого числа
+     * Пример:
+     * 50 = 5 - 0 = 5
+     * 49 = 9 - 4 = 5
+     * 19 = 9 - 1 = 8
+     * */
     public static String task1(final BufferedReader reader, int diff) {
-        /*
-         * Дано 2х значное число, вычислить разность между цифрами этого числа
-         * Пример:
-         * 50 = 5 - 0 = 5
-         * 49 = 9 - 4 = 5
-         * 19 = 9 - 1 = 8
-         * */
         byte rangeFrom = 10;
         byte rangeTo = 99;
 //        String strValue = "";
@@ -63,10 +63,10 @@ public class MathActions {
         return "nothing else";
     }
 
+    /*
+     * Пользователь вводит 3 числа, вывести на экран большее из них
+     * */
     public static String task2(final BufferedReader reader, int value01, int value02, int value03) {
-        /*
-         * Пользователь вводит 3 числа, вывести на экран большее из них
-         * */
         int value1 = value01;
         int value2 = value02;
         int value3 = value03;
@@ -107,16 +107,16 @@ public class MathActions {
         return String.format(String.valueOf(max));
     }
 
+    /*
+     * Больший меньший
+     * Пользователь вводит три числа, вывести на экран большее и меньшее из них в строчку
+     * Пример:
+     * 5
+     * 2
+     * 7
+     * 7 2
+     * */
     public static String task3(final BufferedReader reader, int one, int two, int three) {
-        /*
-         * Больший меньший
-         * Пользователь вводит три числа, вывести на экран большее и меньшее из них в строчку
-         * Пример:
-         * 5
-         * 2
-         * 7
-         * 7 2
-         * */
         int a = one;
         int b = two;
         int c = three;
@@ -166,14 +166,14 @@ public class MathActions {
         return result;
     }
 
+    /*
+     * Цифры 7
+     * Пользователь вводит семизначное число, вывести в консоль среднее арифметическое его цифр
+     * Пример:
+     * 1600061
+     * 2
+     * */
     public static String task4(final BufferedReader reader, int testValue) {
-        /*
-         * Цифры 7
-         * Пользователь вводит семизначное число, вывести в консоль среднее арифметическое его цифр
-         * Пример:
-         * 1600061
-         * 2
-         * */
         int number = testValue;
         if (reader != null) {
             try {
@@ -209,50 +209,62 @@ public class MathActions {
         return result;
     }
 
-    public static String task5(final BufferedReader reader) {
-        /*
-         * Четверть
-         * Пользователь вводит координаты точки,
-         * определить в какой она находится четверти (декартова система координат),
-         * углы наз. - координатными углами, четвертями или квадрантами плоскости.
-         * Если точка находится между четвертями, то выводить 0
-         * Пример:
-         * -2 2
-         * 2
-         * */
-        byte x = 0;
-        byte y = 0;
-        try {
-            log.debug("Введите координаты (от -10 до 10 (включительно)) для оси 'x': ");
-            x = Byte.parseByte(reader.readLine());
-
-            log.debug("Введите координаты (от -10 до 10 (включительно)) для оси 'y': ");
-            y = Byte.parseByte(reader.readLine());
-        } catch (IOException ioe) {
-            System.out.println("EXCEPTION - " + ioe);
-            ioe.printStackTrace();
-        } catch (NumberFormatException nfe) {
-            System.out.println("EXCEPTION - INCORRECT VALUE, LETTERS ARE NOT ALLOWED\n" + nfe + "\n");
-            nfe.printStackTrace();
-        }
-
-        log.debug("- - - - -");
-        if ((x > 0 & x < 11) & (y > 0 & y < 11)) {
-            System.out.println("Координаты расположены в первой четверти (в правом верхнем углу)");
-        } else if ((x < 0 & x > -11) & (y > 0 & y < 11)) {
-            System.out.println("Координаты расположены во второй четверти (в левом верхнем углу)");
-        } else if ((x < 0 & x > -11) & (y < 0 & y > -11)) {
-            System.out.println("Координаты расположены в третей четверти (в левом нижнем углу)");
-        } else if ((x > 0 & x < 11) & (y < 0 & y > -11)) {
-            System.out.println("Координаты расположены в четвертой четверти (в правом нижнем углу)");
-        } else if (x == 0 & y == 0) {
-            System.out.println("Координатов нет!");
+    /*
+     * Четверть
+     * Пользователь вводит координаты точки,
+     * определить в какой она находится четверти (декартова система координат),
+     * углы наз. - координатными углами, четвертями или квадрантами плоскости.
+     * Если точка находится между четвертями, то выводить 0
+     * Пример:
+     * -2 2
+     * 2
+     * */
+    public static String task5(final BufferedReader reader, int testValue1, int testValue2) {
+        int x = testValue1;
+        int y = testValue2;
+        if (reader != null) {
+            try {
+                log.debug("Введите координаты (от -10 до 10 (включительно)) для оси 'x': ");
+                x = Byte.parseByte(reader.readLine());
+                log.debug("Введите координаты (от -10 до 10 (включительно)) для оси 'y': ");
+                y = Byte.parseByte(reader.readLine());
+            } catch (IOException ioe) {
+                System.out.println("EXCEPTION - " + ioe);
+                ioe.printStackTrace();
+            } catch (NumberFormatException nfe) {
+                System.out.println("EXCEPTION - INCORRECT VALUE, LETTERS ARE NOT ALLOWED\n" + nfe + "\n");
+                nfe.printStackTrace();
+            }
         } else {
-            System.out.println("Быдыыыщь!");
+            x = testValue1;
+            y = testValue2;
         }
 
-        log.debug("- - - - -");
-        String result = "Ваши координаты:\nx = " + x + "\n" + "y = " + y + "\n- - - - -THE END\n";
-        return result;
+        String result = "";
+        if ((x > 0 & x < 11) & (y > 0 & y < 11)) {
+            result = "Координаты расположены в первой четверти (в правом верхнем углу)";
+            System.out.println(result);
+            return result;
+        } else if ((x < 0 & x > -11) & (y > 0 & y < 11)) {
+            result = "Координаты расположены во второй четверти (в левом верхнем углу)";
+            System.out.println(result);
+            return result;
+        } else if ((x < 0 & x > -11) & (y < 0 & y > -11)) {
+            result = "Координаты расположены в третей четверти (в левом нижнем углу)";
+            System.out.println(result);
+            return result;
+        } else if ((x > 0 & x < 11) & (y < 0 & y > -11)) {
+            result = "Координаты расположены в четвертой четверти (в правом нижнем углу)";
+            System.out.println(result);
+            return result;
+        } else if (x == 0 & y == 0) {
+            result = "Координатов нет!";
+            System.out.println(result);
+            return result;
+        } else {
+            result = "Быдыыыщь!";
+            System.out.println(result);
+            return result;
+        }
     }
 }
