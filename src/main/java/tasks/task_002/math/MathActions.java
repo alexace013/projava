@@ -1,6 +1,8 @@
 package tasks.task_002.math;
 
 import static java.lang.System.out;
+import static java.lang.System.setOut;
+
 import lombok.extern.log4j.Log4j;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -93,6 +95,7 @@ public class MathActions {
         }
 
 //        String messageText = "The largest of the three {%d, %d, %d} is %d\n- - - - -THE END\n";
+        String messageText = "The largest of the three is ";
         int max;
         String result = "";
         if (value1 > value2) {
@@ -103,8 +106,8 @@ public class MathActions {
         if (value3 > max) {
             max = value3;
         }
-//        return String.format(messageText, value1, value2, value3, max);
-        return String.format(String.valueOf(max));
+        System.out.println(max);
+        return String.valueOf(max);
     }
 
     /*
