@@ -17,16 +17,20 @@ public class MathActionsTask2Test {
     * */
     @Test
     public void testMethodA() {
+        System.out.println("Input: " + a);
         Assert.assertEquals("3", MathActions.task2(null, a, b, c));
     }
 
     @Test
     public void testMethodB() {
+        System.out.println("Input: " + b);
         Assert.assertEquals("3", MathActions.task2(null, c, b, a));
     }
 
     @Test
     public void testMethodC() {
+        System.out.println("Input: " + c);
         Assert.assertEquals("3", MathActions.task2(null, c, c, c));
+        System.out.println();
     }
 }

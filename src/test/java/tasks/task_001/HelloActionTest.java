@@ -21,5 +21,6 @@ public class HelloActionTest {
     public void _02_testHelloActionNegative() {
         assertFalse(getSaluteUserText(getTestDefaultUser())
                 .contains(format("%s-TEST", DEFAULT_NAME.getName())));
+        System.out.println();
     }
 }

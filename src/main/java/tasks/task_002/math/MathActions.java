@@ -1,7 +1,6 @@
 package tasks.task_002.math;
 
 import static java.lang.System.out;
-
 import lombok.extern.log4j.Log4j;
 import java.io.BufferedReader;
 import java.io.IOException;
