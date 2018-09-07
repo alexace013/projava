@@ -167,7 +167,7 @@ public class MathActions {
         return result;
     }
 
-    public static String task4(final BufferedReader reader) {
+    public static String task4(final BufferedReader reader, int testValue) {
         /*
          * Цифры 7
          * Пользователь вводит семизначное число, вывести в консоль среднее арифметическое его цифр
@@ -175,16 +175,20 @@ public class MathActions {
          * 1600061
          * 2
          * */
-        int number = 0;
-        try {
-            log.debug("Введите 7-ми значное число: ");
-            number = Integer.parseInt(reader.readLine());
-        } catch (IOException ioe) {
-            System.out.println("EXCEPTION - " + ioe);
-            ioe.printStackTrace();
-        } catch (NumberFormatException nfe) {
-            System.out.println("EXCEPTION - INCORRECT VALUE, LETTERS ARE NOT ALLOWED\n" + nfe + "\n");
-            nfe.printStackTrace();
+        int number = testValue;
+        if (reader != null) {
+            try {
+                log.debug("Введите 7-ми значное число: ");
+                number = Integer.parseInt(reader.readLine());
+            } catch (IOException ioe) {
+                System.out.println("EXCEPTION - " + ioe);
+                ioe.printStackTrace();
+            } catch (NumberFormatException nfe) {
+                System.out.println("EXCEPTION - INCORRECT VALUE, LETTERS ARE NOT ALLOWED\n" + nfe + "\n");
+                nfe.printStackTrace();
+            }
+        } else {
+            number = testValue;
         }
 
         int res1 = number / 1000000; // 1
@@ -202,7 +206,7 @@ public class MathActions {
         res7 = res7 % 10; // 7
 
         int arithmeticMean = (res1 + res2 + res3 + res4 + res5 + res6 + res7) / 7;
-        String result = "Среднее арифметическое: " + arithmeticMean + "\n- - - - -THE END\n";
+        String result = "Среднее арифметическое: " + arithmeticMean;
         return result;
     }
 
