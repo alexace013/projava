@@ -1,10 +1,10 @@
-package tasks.task_002;
+package tasks.course;
 
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
-import tasks.task_002.math.MathActions;
+import tasks.course.math.MathActions;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MathActionsTask4Test {

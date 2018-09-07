@@ -1,4 +1,4 @@
-package tasks.task_002.math;
+package tasks.course.math;
 
 import static java.lang.System.out;
 import lombok.extern.log4j.Log4j;
