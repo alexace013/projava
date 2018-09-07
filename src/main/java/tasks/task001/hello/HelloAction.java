@@ -1,4 +1,4 @@
-package tasks.task_001.hello;
+package tasks.task001.hello;
 
 import static java.lang.String.format;
 import entities.user.User;
