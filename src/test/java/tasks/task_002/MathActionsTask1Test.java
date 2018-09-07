@@ -8,29 +8,30 @@ import tasks.task_002.math.MathActions;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MathActionsTask1Test {
-    private int value1 = 11;
-    private int value2 = 19;
-    private int value3 = 50;
-
     /*
     * Positive cases
     * */
     @Test
     public void testMethodA() {
-        System.out.println("Input: " + value1);
-        Assert.assertEquals("0", MathActions.task1(null, value1));
+        int value = 11;
+        System.out.println("Input: " + value);
+        Assert.assertEquals("0", MathActions.task1(null, value));
+        System.out.println();
     }
 
     @Test
     public void testMethodB() {
-        System.out.println("Input: " + value2);
-        Assert.assertEquals("8", MathActions.task1(null, value2));
+        int value = 19;
+        System.out.println("Input: " + value);
+        Assert.assertEquals("8", MathActions.task1(null, value));
+        System.out.println();
     }
 
     @Test
     public void testMethodC() {
-        System.out.println("Input: " + value3);
-        Assert.assertEquals("5", MathActions.task1(null, value3));
+        int value = 50;
+        System.out.println("Input: " + value);
+        Assert.assertEquals("5", MathActions.task1(null, value));
         System.out.println();
     }
 }

@@ -1,8 +1,6 @@
 package tasks.task_002.math;
 
 import static java.lang.System.out;
-import static java.lang.System.setOut;
-
 import lombok.extern.log4j.Log4j;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -42,6 +40,7 @@ public class MathActions {
 
 //        final int value = Integer.parseInt(strValue);
         final int value = strValue;
+        String stringResult = "";
         if (value < rangeFrom || value > rangeTo) {
             log.warn(String.format("Value should be include range from %d to %d, but was entered {%s}", rangeFrom, rangeTo, strValue));
         } else {
@@ -54,15 +53,17 @@ public class MathActions {
                 result = firstNumber - secondNumber;
                 log.debug(String.format(differenceMessageLog, result));
 //                return String.format(differenceMessage, result);
-                return String.format(String.valueOf(result));
+                stringResult = String.valueOf(result);
+                return stringResult;
             } else {
                 result = secondNumber - firstNumber;
                 log.debug(String.format(differenceMessageLog, result));
 //                return String.format(differenceMessage, result);
-                return String.format(String.valueOf(result));
+                stringResult = String.valueOf(result);
+                return stringResult;
             }
         }
-        return "nothing else";
+        return "Nothing else!";
     }
 
     /*
