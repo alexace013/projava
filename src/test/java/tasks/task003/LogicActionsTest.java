@@ -5,7 +5,7 @@ import org.junit.runners.MethodSorters;
 import tasks.task003.logic.LogicActions;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class Task003Test {
+public class LogicActionsTest {
     @BeforeClass
     public static void beforStart() {
         System.out.println("START TEST" + "\n" + "- - - - -");
