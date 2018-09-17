@@ -46,7 +46,7 @@ public class LogicActions {
 
         if (a >= 1) {
             for (int i = 0; i < a; i++) {
-                System.out.print((int) (Math.random() * 100));
+                System.out.print((int) (Math.random() * 100) + " ");
                 countOfNewLines++;
             }
         }
