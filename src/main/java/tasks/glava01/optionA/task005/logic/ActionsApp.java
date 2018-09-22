@@ -1,4 +1,4 @@
-package tasks.task005.logic;
+package tasks.glava01.optionA.task005.logic;
 
 import java.util.ArrayList;
 import java.util.Scanner;
