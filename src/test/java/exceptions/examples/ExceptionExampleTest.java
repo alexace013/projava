@@ -35,7 +35,7 @@ public class ExceptionExampleTest {
             result = getTextByIndexThrowIndexOutOfBoundsException(testArray, isException);
         } catch (IndexOutOfBoundsException e) {
             log.debug("1-st exception");
-            log.warn(e);
+            log.error(e);
         }
         return result;
     }

@@ -8,18 +8,14 @@ import java.util.Arrays;
 class ExceptionExample {
 
     static String getTextByIndexThrowIndexOutOfBoundsException(final String[] textArray, final boolean isExceptionThrow) throws IndexOutOfBoundsException {
-        return getStringTrowException(textArray, isExceptionThrow);
-    }
-
-    private static String getStringTrowException(final String[] array, final boolean isExceptionThrow) {
         final byte incorrectArrayIndex = -1;
         final byte correctArrayIndex = 0;
-        log.debug(Arrays.asList(array));
+        log.debug(Arrays.toString(textArray));
         if (isExceptionThrow) {
             log.warn(String.format("incorrect array index: [%d]", incorrectArrayIndex));
-            return array[incorrectArrayIndex];
+            return textArray[incorrectArrayIndex];
         }
-        log.debug(array[correctArrayIndex]);
-        return array[correctArrayIndex];
+        log.debug(textArray[correctArrayIndex]);
+        return textArray[correctArrayIndex];
     }
 }
