@@ -1,10 +1,10 @@
-package tasks.task004;
+package tasks.glava01.optionA.task004;
 
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
-import tasks.task004.logic.LogicActions;
+import tasks.glava01.optionA.task004.logic.LogicActions;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Task004LogicActionsTest {

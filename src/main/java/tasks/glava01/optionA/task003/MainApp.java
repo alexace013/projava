@@ -1,6 +1,6 @@
-package tasks.task003;
+package tasks.glava01.optionA.task003;
 
-import tasks.task003.logic.LogicActions;
+import tasks.glava01.optionA.task003.logic.LogicActions;
 
 public class MainApp {
     public static void main(String [] args) {

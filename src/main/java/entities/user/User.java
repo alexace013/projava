@@ -64,6 +64,8 @@ public class User {
     /**
      * @param name User name
      * @param age  User age
+     * @throws IncorrectUserAgeException
+     * @throws NullPointerException
      */
     public User(final String name, final int age) throws IncorrectUserAgeException, NullPointerException {
         if (age < 0) {

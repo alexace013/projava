@@ -1,6 +1,6 @@
-package tasks.task005;
+package tasks.glava01.optionA.task005;
 
-import tasks.task005.logic.ActionsApp;
+import tasks.glava01.optionA.task005.logic.ActionsApp;
 
 /*
 * Создать программу ввода целых чисел как аргументов командной строки,

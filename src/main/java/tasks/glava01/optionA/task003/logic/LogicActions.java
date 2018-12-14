@@ -1,4 +1,4 @@
-package tasks.task003.logic;
+package tasks.glava01.optionA.task003.logic;
 
 import java.util.Scanner;
 

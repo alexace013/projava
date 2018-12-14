@@ -1,4 +1,4 @@
-package tasks.task001.hello;
+package tasks.glava01.optionA.task001.hello;
 
 import static java.lang.System.out;
 
