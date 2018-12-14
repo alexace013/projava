@@ -2,7 +2,6 @@ package tasks.course;
 
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 import tasks.course.math.MathActions;
@@ -16,22 +15,24 @@ public class MathActionsTask3Test {
     /*
     * Positive cases
     * */
-    @Ignore
     @Test
     public void testMethodA() {
-        getText(one, two, three);
+        System.out.println("Input : " + one);
+        System.out.println("Input : " + two);
+        System.out.println("Input : " + three);
         Assert.assertEquals("1 3",  MathActions.task3(null, one, two, three));
         System.out.println();
     }
 
     @Test
     public void testMethodB() {
-        getText(one, two, two);
+        System.out.println("Input : " + one);
+        System.out.println("Input : " + two);
+        System.out.println("Input : " + two);
         Assert.assertEquals("1 2",  MathActions.task3(null, one, two, two));
         System.out.println();
     }
 
-    @Ignore
     @Test
     public void testMethodC() {
         System.out.println("Input : " + one);
@@ -41,7 +42,6 @@ public class MathActionsTask3Test {
         System.out.println();
     }
 
-    @Ignore
     @Test
     public void testMethodD() {
         System.out.println("Input : " + three);
@@ -51,7 +51,6 @@ public class MathActionsTask3Test {
         System.out.println();
     }
 
-    @Ignore
     @Test
     public void testMethodE() {
         System.out.println("Input : " + two);
@@ -61,7 +60,6 @@ public class MathActionsTask3Test {
         System.out.println();
     }
 
-    @Ignore
     @Test
     public void testMethodF() {
         System.out.println("Input : " + two);
@@ -71,7 +69,6 @@ public class MathActionsTask3Test {
         System.out.println();
     }
 
-    @Ignore
     @Test
     public void testMethodG() {
         System.out.println("Input : " + one);
@@ -81,7 +78,6 @@ public class MathActionsTask3Test {
         System.out.println();
     }
 
-    @Ignore
     @Test
     public void testMethodH() {
         System.out.println("Input : " + two);
@@ -91,7 +87,6 @@ public class MathActionsTask3Test {
         System.out.println();
     }
 
-    @Ignore
     @Test
     public void testMethodI() {
         System.out.println("Input : " + two);
@@ -101,7 +96,6 @@ public class MathActionsTask3Test {
         System.out.println();
     }
 
-    @Ignore
     @Test
     public void testMethodJ() {
         System.out.println("Input : " + one);
@@ -109,9 +103,5 @@ public class MathActionsTask3Test {
         System.out.println("Input : " + one);
         Assert.assertEquals("1",  MathActions.task3(null, one, one, one));
         System.out.println();
-    }
-
-    private static void getText(final int val1, final int val2, final int val3) {
-        System.out.println(String.format("Input: %d\nInput: %d\nInput: %d", val1, val2, val3));
     }
 }

@@ -1,11 +1,11 @@
-package tasks.glava01.optionA.task001;
+package tasks.task001;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
 import static java.lang.String.format;
 import static entities.user.User.UserData.DEFAULT_NAME;
 import static entities.user.User.getTestDefaultUser;
-import static tasks.glava01.optionA.task001.hello.HelloAction.getSaluteUserText;
+import static tasks.task001.hello.HelloAction.getSaluteUserText;
 
 import org.junit.Test;
 
