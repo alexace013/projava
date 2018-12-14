@@ -13,7 +13,7 @@ public class ExceptionExampleTest {
     private static final String TEST_TEXT = "test";
 
     @Test
-    public void exceptionExample_test_01() {
+    public void exceptionExample_getTextByIndexThrowIndexOutOfBoundsException_test_01() {
         try {
             log.debug("something wrong with array index");
             assertNotEquals(true, exceptionExampleLogic(true).equals(TEST_TEXT));
@@ -24,7 +24,7 @@ public class ExceptionExampleTest {
     }
 
     @Test
-    public void exceptionExample_test_02() {
+    public void exceptionExample_getTextByIndexThrowIndexOutOfBoundsException_test_02() {
         assertEquals(exceptionExampleLogic(false), TEST_TEXT);
     }
 
