@@ -1,8 +1,8 @@
-package tasks.glava01.optionA.task003;
+package tasks.task003;
 
 import org.junit.*;
 import org.junit.runners.MethodSorters;
-import tasks.glava01.optionA.task003.logic.LogicActions;
+import tasks.task003.logic.LogicActions;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class LogicActionsTest {

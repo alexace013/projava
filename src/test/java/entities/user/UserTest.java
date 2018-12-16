@@ -40,11 +40,6 @@ public class UserTest {
     }
 
     @Test
-    // TODO need add check for > 150 value
-    /**
-     * for more information
-     * @see User#RANDOM_MAX_VALUE
-     * */
     public void _04_testUserWithNegativeAgeData() {
         int age = (-1) * (faker.random().nextInt(User.getRandomMinValue(), User.getRandomMaxValue()));
         try {

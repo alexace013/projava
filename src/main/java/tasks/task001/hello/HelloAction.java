@@ -1,4 +1,4 @@
-package tasks.glava01.optionA.task001.hello;
+package tasks.task001.hello;
 
 import static java.lang.String.format;
 import entities.user.User;
