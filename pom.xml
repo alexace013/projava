@@ -45,6 +45,14 @@
             <artifactId>javafaker</artifactId>
             <version>0.15</version>
         </dependency>
+
+        <!--REST Assured-->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>3.3.0</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
