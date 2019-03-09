@@ -50,6 +50,22 @@ public class UserTest {
     }
 
     @Test
+    // section can be removed
+    // TODO need add check for > 150 value (was implemented, can be modified)
+    public void _05_testUserWithNegativeAgeMoreMaxAgeValueData() throws IncorrectUserAgeException {
+        int age = 151;
+        final String messageText = String.format("You age value isn't correct.\nAge value should be from [%d] to [%d]", User.RANDOM_MIN_VALUE, User.RANDOM_MAX_VALUE);
+        final boolean isAgeMoreMaxValue = age > User.RANDOM_MAX_VALUE;
+        if (isAgeMoreMaxValue) {
+            Assert.assertTrue(isAgeMoreMaxValue);
+        } else {
+            log.debug(messageText);
+            Assert.fail(messageText);
+        }
+        user = new User(faker.name().firstName(), age);
+    }
+
+    @Test
     public void _05_testUserNullData() {
         user = null;
         Assert.assertNull(user);

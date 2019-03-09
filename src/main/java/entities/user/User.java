@@ -16,8 +16,8 @@ public class User {
     private int age;
     public static int testUserAge;
     private static final String USER_DEBUG_MESSAGE = "{\n\tuser name: %s\n\tuser age: %d\n}";
-    private static final int RANDOM_MIN_VALUE = 0;
-    private static final int RANDOM_MAX_VALUE = 150;
+    protected static final int RANDOM_MIN_VALUE = 0;
+    protected static final int RANDOM_MAX_VALUE = 150;
 
     @Getter
     public enum UserData {
@@ -64,6 +64,8 @@ public class User {
     /**
      * @param name User name
      * @param age  User age
+     * @throws IncorrectUserAgeException
+     * @throws NullPointerException
      */
     public User(final String name, final int age) throws IncorrectUserAgeException, NullPointerException {
         if (age < 0) {

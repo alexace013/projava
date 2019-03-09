@@ -181,6 +181,7 @@ public class MathActions {
         int number = testValue;
         if (reader != null) {
             try {
+                // TODO add check for 7 characters
                 log.debug("Введите 7-ми значное число: ");
                 number = Integer.parseInt(reader.readLine());
             } catch (IOException ioe) {
