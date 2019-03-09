@@ -1,37 +1,52 @@
 package tasks.course;
 
-import org.junit.Assert;
+import static org.junit.Assert.assertEquals;
+import static java.lang.String.format;
+import static tasks.course.math.MathActions.task1;
+import static java.lang.Integer.parseInt;
+import static java.lang.System.out;
+
+import lombok.extern.log4j.Log4j;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
-import tasks.course.math.MathActions;
 
+@Log4j
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class MathActionsTask1Test {
-    /*
-    * Positive cases
-    * */
+public class MathActionsTask1Test extends MathActionsConstants {
+
     @Test
-    public void testMethodA() {
-        int value = 11;
-        System.out.println("Input: " + value);
-        Assert.assertEquals("0", MathActions.task1(null, value));
-        System.out.println();
+    public void positiveTestMethodValue11() {
+        value = 11;
+        msg = format(INPUT_MSG, value);
+        assert msg != null;
+        log.info(msg);
+        out.println(msg);
+        assertEquals(0, parseInt(task1(null, value)));
     }
 
     @Test
-    public void testMethodB() {
-        int value = 19;
-        System.out.println("Input: " + value);
-        Assert.assertEquals("8", MathActions.task1(null, value));
-        System.out.println();
+    public void positiveTestMethodValue19() {
+        value = 19;
+        msg = format(INPUT_MSG, value);
+        assert msg != null;
+        log.info(msg);
+        out.println(msg);
+        assertEquals(8, parseInt(task1(null, value)));
     }
 
     @Test
-    public void testMethodC() {
-        int value = 50;
-        System.out.println("Input: " + value);
-        Assert.assertEquals("5", MathActions.task1(null, value));
-        System.out.println();
+    public void positiveTestMethodValue50() {
+        value = 50;
+        msg = format(INPUT_MSG, value);
+        assert msg != null;
+        log.info(msg);
+        out.println(msg);
+        assertEquals(5, parseInt(task1(null, value)));
+    }
+
+    @Test
+    public void positiveTestMethodValueNull() {
+        assert msg == null;
     }
 }

@@ -1,44 +1,50 @@
 package tasks.course;
 
-import org.junit.Assert;
+import static org.junit.Assert.assertEquals;
+import static tasks.course.math.MathActions.task2;
+import static java.lang.System.out;
+import static java.lang.String.format;
+import static java.lang.Integer.parseInt;
+
+import lombok.extern.log4j.Log4j;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
-import tasks.course.math.MathActions;
 
+@Log4j
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class MathActionsTask2Test {
-    private int a = 1;
-    private int b = 2;
-    private int c = 3;
+public class MathActionsTask2Test extends MathActionsConstants {
 
-    /*
-    * Positive cases
-    * */
     @Test
-    public void testMethodA() {
-        System.out.println("Input: " + a);
-        System.out.println("Input: " + b);
-        System.out.println("Input: " + c);
-        Assert.assertEquals("3", MathActions.task2(null, a, b, c));
-        System.out.println();
+    public void positiveTestMethodABC() {
+        out.println(format(INPUT_MSG, A));
+        log.info(format(INPUT_MSG, A));
+        out.println(format(INPUT_MSG, B));
+        log.info(format(INPUT_MSG, B));
+        out.println(format(INPUT_MSG, C));
+        log.info(format(INPUT_MSG, C));
+        assertEquals(3, parseInt(task2(null, A, B, C)));
     }
 
     @Test
-    public void testMethodB() {
-        System.out.println("Input: " + c);
-        System.out.println("Input: " + b);
-        System.out.println("Input: " + a);
-        Assert.assertEquals("3", MathActions.task2(null, c, b, a));
-        System.out.println();
+    public void positiveTestMethodCBA() {
+        out.println(format(INPUT_MSG, C));
+        log.info(format(INPUT_MSG, C));
+        out.println(format(INPUT_MSG, B));
+        log.info(format(INPUT_MSG, B));
+        out.println(format(INPUT_MSG, A));
+        log.info(format(INPUT_MSG, A));
+        assertEquals(3, parseInt(task2(null, C, B, A)));
     }
 
     @Test
-    public void testMethodC() {
-        System.out.println("Input: " + c);
-        System.out.println("Input: " + c);
-        System.out.println("Input: " + c);
-        Assert.assertEquals("3", MathActions.task2(null, c, c, c));
-        System.out.println();
+    public void positiveTestMethodCCC() {
+        out.println(format(INPUT_MSG, C));
+        log.info(format(INPUT_MSG, C));
+        out.println(format(INPUT_MSG, C));
+        log.info(format(INPUT_MSG, C));
+        out.println(format(INPUT_MSG, C));
+        log.info(format(INPUT_MSG, C));
+        assertEquals(3, parseInt(task2(null, C, C, C)));
     }
 }
