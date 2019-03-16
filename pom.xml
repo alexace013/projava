@@ -68,6 +68,11 @@
             <artifactId>json-path</artifactId>
             <version>3.0.7</version>
         </dependency>
+        <dependency><!--Jackson Modules Base, https://github.com/FasterXML/jackson-modules-base-->
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-module-jaxb-annotations</artifactId>
+            <version>2.4.0</version>
+        </dependency>
     </dependencies>
 
     <build>

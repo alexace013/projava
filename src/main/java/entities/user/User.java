@@ -16,8 +16,8 @@ public class User {
     private int age;
     public static int testUserAge;
     private static final String USER_DEBUG_MESSAGE = "{\n\tuser name: %s\n\tuser age: %d\n}";
-    protected static final int RANDOM_MIN_VALUE = 0;
-    protected static final int RANDOM_MAX_VALUE = 150;
+    public static final int RANDOM_MIN_VALUE = 0;
+    public static final int RANDOM_MAX_VALUE = 150;
 
     @Getter
     public enum UserData {

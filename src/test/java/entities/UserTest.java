@@ -1,4 +1,4 @@
-package entities.user;
+package entities;
 
 import static entities.user.User.UserData.DEFAULT_NAME;
 import static entities.user.User.UserData.DEFAULT_AGE;
@@ -6,6 +6,7 @@ import static entities.user.User.UserData.TEST_NAME;
 import static java.lang.String.format;
 
 import com.github.javafaker.Faker;
+import entities.user.User;
 import exceptions.IncorrectUserAgeException;
 import lombok.extern.log4j.Log4j;
 import org.junit.*;
@@ -54,7 +55,7 @@ public class UserTest {
     // TODO need add check for > 150 value (was implemented, can be modified)
     public void _05_testUserWithNegativeAgeMoreMaxAgeValueData() throws IncorrectUserAgeException {
         int age = 151;
-        final String messageText = String.format("You age value isn't correct.\nAge value should be from [%d] to [%d]", User.RANDOM_MIN_VALUE, User.RANDOM_MAX_VALUE);
+        final String messageText = format("You age value isn't correct.\nAge value should be from [%d] to [%d]", User.RANDOM_MIN_VALUE, User.RANDOM_MAX_VALUE);
         final boolean isAgeMoreMaxValue = age > User.RANDOM_MAX_VALUE;
         if (isAgeMoreMaxValue) {
             Assert.assertTrue(isAgeMoreMaxValue);
