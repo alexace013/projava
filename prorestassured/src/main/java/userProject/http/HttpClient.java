@@ -11,8 +11,9 @@ public class HttpClient {
     public HttpClient() {
         RestAssured.requestSpecification = new RequestSpecBuilder()
                 .setContentType(ContentType.JSON)
+                .setBaseUri("http://users.bugred.ru/tasks/rest")
                 .log(LogDetail.ALL)
-                .addParam(String.valueOf(new ResponseLoggingFilter()))
+                .addFilter(new ResponseLoggingFilter())
                 .build();
 
 //        RestAssured.responseSpecification = new ResponseSpecBuilder()
