@@ -1,7 +1,7 @@
-package services;
+package userProject.services;
 
 import com.github.javafaker.Faker;
-import entities.user.Bugred;
+import userProject.entity.Bugred;
 
 public class BugredService {
     public static Object createBugredEntity() {

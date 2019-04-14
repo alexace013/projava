@@ -1,54 +1,36 @@
-package api;
+package userTests;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.javafaker.Faker;
-import entities.user.Bugred;
-import org.junit.Test;
+import org.testng.annotations.Test;
+import userProject.entity.Bugred;
+import userProject.http.HttpClient;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
-import static services.BugredService.createBugredEntity;
+import static userProject.services.BugredService.createBugredEntity;
 
-public class BugredTests {
+public class BugredTests extends HttpClient {
     private static final String HOST = "https://api.github.com";
     private static final String USERS_ENDPOINT = "/users";
     private static final String NONEXISTENT_ENDPOINT = "/sokiable";
     private static final String yanb8_USER = "/yanb8";
     private static final String URL = "http://restcountries.eu/rest/v1/";
 
-    /**
-     * Test method sends GET request and check status code
-     * Request to: HOST + USERS_ENDPOINT + yanb8_USER
-     * Expected status code: 200
-     * */
-    @Test
+    @Test(description = "GET", priority = 1)
     public void getUser() {
-        String url = HOST + USERS_ENDPOINT + yanb8_USER;
-        
         given()
-        .when()
-            .get(url)
-        .then()
-            .statusCode(200)
-                .log()
-                .all()
-                .extract()
-                .asString();
+        .when().get(HOST + USERS_ENDPOINT + yanb8_USER)
+        .then().statusCode(200);
     }
 
     @Test
     public void get404() {
         given()
-        .when()
-            .get(HOST + USERS_ENDPOINT + yanb8_USER + NONEXISTENT_ENDPOINT)
-        .then()
-            .statusCode(404)
+        .when().get(HOST + USERS_ENDPOINT + yanb8_USER + NONEXISTENT_ENDPOINT)
+        .then().statusCode(404)
             .body("message", equalTo("Not Found"))
-            .body("documentation_url", equalTo("https://developer.github.com/v3"))
-                .log()
-                .all()
-                .extract()
-                .asString();;
+            .body("documentation_url", equalTo("https://developer.github.com/v3"));
     }
 
 
@@ -57,21 +39,12 @@ public class BugredTests {
         String url = HOST + USERS_ENDPOINT + yanb8_USER + NONEXISTENT_ENDPOINT;
 
         given()
-        .when()
-            .get(url)
-        .then()
-            .statusCode(404)
+        .when().get(url)
+        .then().statusCode(404)
             .body("message", equalTo("Not Found"))
-            .body("documentation_url", equalTo("https://developer.github.com/v3"))
-                .log()
-                .all()
-                .extract()
-                .asString();;
+            .body("documentation_url", equalTo("https://developer.github.com/v3"));
     }
 
-    /**
-     * Test method checks Ukrainian object
-     * */
     @Test
     public void test4() {
         given()
@@ -83,18 +56,11 @@ public class BugredTests {
                 .body("translations.de", hasItem("Ukraine"))
                 .body("translations.es", hasItem("Ucrania"))
                 .body("translations.ja", hasItem("ウクライナ"))
-                .body("find {it.name == 'Ukraine'}.languages", containsInAnyOrder("uk"))
+                .body("find {it.name == 'Ukraine'}.languages", containsInAnyOrder("uk"));
 //                .body("topLevelDomain", hasItemInArray(equalTo(".ua")))
 //                .body("callingCodes", hasItem("380"))
-                .log().all().extract().asString();
     }
 
-    /**
-     * Test method generate data,
-     * create Bugred object
-     * do POST request
-     * check response from server
-     * */
     @Test
     public void test5() throws JsonProcessingException {
         Faker f = new Faker();
@@ -107,17 +73,11 @@ public class BugredTests {
         String objectRequest = objectMapper.writeValueAsString(bugred); // option 2
         System.out.println("OBJECT ---> JSON:\n" + objectRequest + "\n");
 
-        given()
-            .body(objectRequest)
-        .when()
-            .post("http://users.bugred.ru/tasks/rest/doregister")
-        .then()
+        given().body(objectRequest)
+        .when().post("http://users.bugred.ru/tasks/rest/doregister")
+        .then().statusCode(200)
             .body("name", equalTo(bugred.getName()))
-            .body("email", equalTo(bugred.getEmail()))
-            .statusCode(200)
-                .log()
-                .all()
-                .extract()
-                .asString();
+            .body("email", equalTo(bugred.getEmail()));
+
     }
 }

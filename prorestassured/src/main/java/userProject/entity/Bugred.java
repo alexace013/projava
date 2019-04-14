@@ -1,4 +1,4 @@
-package entities.user;
+package userProject.entity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -21,7 +21,7 @@ public class Bugred {
 
     @Override
     public String toString() {
-        return "Bugred{\n" +
+        return "Bugred {\n" +
                 "name = '" + name + '\'' +
                 ",\nemail = '" + email + '\'' +
                 ",\npassword = '" + password + '\'' +
