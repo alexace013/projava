@@ -13,7 +13,7 @@ import userProject.http.HttpClient;
 
 import java.time.LocalDate;
 
-public class BugredTests extends HttpClient {
+public class BugredTest extends HttpClient {
 
     private Bugred bugred;
     private String userName = generateFirstName();
@@ -37,7 +37,6 @@ public class BugredTests extends HttpClient {
                 .when().post("/doregister")
                 .then().statusCode(200)
                 .body("name", equalTo(bugred.getName()))
-                // TODO why this check is not works as expected ?
                 .body("surname", equalTo(bugred.getSurname()))
                 .body("avatar", equalTo("http://users.bugred.ru/tmp/default_avatar.jpg"))
                 .body("email", equalTo(bugred.getEmail()))
